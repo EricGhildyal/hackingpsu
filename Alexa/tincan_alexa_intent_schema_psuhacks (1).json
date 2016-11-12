@@ -1,0 +1,13 @@
+{
+    "intents": [
+        {
+            "name": "CalCount",
+            "slots": [
+                {
+                    "name": "FoodItem",
+                    "type": "Amazon.CUSTOM"
+                }
+            ]
+        }
+    ]
+}
