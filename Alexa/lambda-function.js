@@ -1,81 +1,79 @@
-var https = require('https')
+/**
+    Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
-exports.handler = (event, context) => {
+    Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
 
-  try {
+        http://aws.amazon.com/apache2.0/
 
-    if (event.session.new) {
-      // New Session
-      console.log("NEW SESSION")
-    }
+    or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+*/
 
-    switch (event.request.type) {
+/**
+ * This simple sample has no external dependencies or session management, and shows the most basic
+ * example of how to create a Lambda function for handling Alexa Skill requests.
+ *
+ * Examples:
+ * One-shot model:
+ *  User: "Alexa, tell Hello World to say hello"
+ *  Alexa: "Hello World!"
+ */
 
-      case "LaunchRequest":
-        // Launch Request
-        console.log(`LAUNCH REQUEST`)
-        context.succeed(
-          generateResponse(
-            buildSpeechletResponse("Welcome to an Alexa Skill, this is running on a deployed lambda function", true),
-            {}
-          )
-        )
-        break;
+/**
+ * App ID for the skill
+ */
+var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 
-      case "IntentRequest":
-        // Intent Request
-        console.log(`INTENT REQUEST`)
+/**
+ * The AlexaSkill prototype and helper functions
+ */
+var AlexaSkill = require('./AlexaSkill');
 
-        switch(event.request.intent.name) {
+/**
+ * HelloWorld is a child of AlexaSkill.
+ * To read more about inheritance in JavaScript, see the link below.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#Inheritance
+ */
+var HelloWorld = function () {
+    AlexaSkill.call(this, APP_ID);
+};
 
-          case "CalCount":
-          context.succeed(
-            generateResponse(
-              buildSpeechletResponse(`too much`, true),
-              {}
-            )
-          )
-            break;
+// Extend AlexaSkill
+HelloWorld.prototype = Object.create(AlexaSkill.prototype);
+HelloWorld.prototype.constructor = HelloWorld;
 
-          default:
-            throw "Invalid intent"
-        }
+HelloWorld.prototype.eventHandlers.onSessionStarted = function (sessionStartedRequest, session) {
+    console.log("HelloWorld onSessionStarted requestId: " + sessionStartedRequest.requestId
+        + ", sessionId: " + session.sessionId);
+    // any initialization logic goes here
+};
 
-        break;
+HelloWorld.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
+    console.log("HelloWorld onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
+    var speechOutput = "Welcome to the Alexa Skills Kit, you can say hello";
+    var repromptText = "You can say hello";
+    response.ask(speechOutput, repromptText);
+};
 
-      case "SessionEndedRequest":
-        // Session Ended Request
-        console.log(`SESSION ENDED REQUEST`)
-        break;
+HelloWorld.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
+    console.log("HelloWorld onSessionEnded requestId: " + sessionEndedRequest.requestId
+        + ", sessionId: " + session.sessionId);
+    // any cleanup logic goes here
+};
 
-      default:
-        context.fail(`INVALID REQUEST TYPE: ${event.request.type}`)
-
-    }
-
-  } catch(error) { context.fail(`Exception: ${error}`) }
-
-}
-
-// Helpers
-buildSpeechletResponse = (outputText, shouldEndSession) => {
-
-  return {
-    outputSpeech: {
-      type: "PlainText",
-      text: outputText
+HelloWorld.prototype.intentHandlers = {
+    // register custom intent handlers
+    "HelloWorldIntent": function (intent, session, response) {
+        response.tellWithCard("Hello World!", "Hello World", "Hello World!");
     },
-    shouldEndSession: shouldEndSession
-  }
+    "AMAZON.HelpIntent": function (intent, session, response) {
+        response.ask("You can say hello to me!", "You can say hello to me!");
+    }
+};
 
-}
-
-generateResponse = (speechletResponse, sessionAttributes) => {
-
-  return {
-    version: "1.0",
-    sessionAttributes: sessionAttributes,
-    response: speechletResponse
-  }
-
-}
+// Create the handler that responds to the Alexa Request.
+exports.handler = function (event, context) {
+    // Create an instance of the HelloWorld skill.
+    var helloWorld = new HelloWorld();
+    helloWorld.execute(event, context);
+};

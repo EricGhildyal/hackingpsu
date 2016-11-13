@@ -1,52 +1,11 @@
 // app/routes.js
 
-var send = require('./controllers/send.js');
 var retrieve = require('./controllers/retrieve.js');
-var addFriend = require('./controllers/addFriend.js');
-var getUser = require('./controllers/getUser.js');
 
 module.exports = function(app){
 
-  app.get('/', function(req, res){
+  app.get('/query', function(req, res){
     retrieve.output(function(data){
-      res.render(__dirname + '/views/home.ejs', { signupMessage: req.flash('signupMessage'), loginMessage: req.flash('loginMessage')  });
-    });
+      //TODO: add all the things
   });
-
-  app.get('/messaging', isLoggedIn, function(req, res){
-    retrieve.output(function(data){
-      res.render(__dirname + '/views/messaging.ejs', {
-        msgs: data,
-        user: req.user,
-        freqMessage: req.flash('freqMessage')
-      });
-    });
-
-  });
-
-  app.post('/messaging', isLoggedIn, function(req, res){
-    send.msg(req, res);
-    res.redirect('/messaging'); //use a callback
-  });
-
-  app.post('/freq', isLoggedIn, function(req, res){
-    addFriend.add(req, res);
-  });
-
-  app.post('/freqProfiles', isLoggedIn, function(req, res){
-    getUser.output(req,res);
-  });
-
-  app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect : '/messaging', // redirect to the secure profile section
-    failureRedirect : '/', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
-  }));
-
-  // process the login form
-  app.post('/login', passport.authenticate('local-login', {
-    successRedirect : '/messaging', // redirect to the secure profile section
-    failureRedirect : '/', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
-  }));
 };
