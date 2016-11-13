@@ -1,11 +1,11 @@
 // app/routes.js
 
-var retrieve = require('./controllers/retrieve.js');
+var Spoon = require('./controllers/spoon.js');
 
 module.exports = function(app){
 
   app.get('/query', function(req, res){
-    retrieve.output(function(data){
+    Spoon.output(req, function(data){
       //TODO: add all the things
   });
 };
