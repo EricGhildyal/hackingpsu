@@ -60,14 +60,23 @@ Pandvi.prototype.intentHandlers = {
     },
     "GetRecipeWithCalories": function (intent, session, response) {
         var cal = intent.slots.Cal.value;
-        http.get("http://pandvi.herokuapp.com/getRecipeWithCal?" + cal, function(res) {
-          res.on('end', function() {
-            console.log(res);
+        var event = {"url": "http://pandvi.herokuapp.com/getRecipeWithCal?" + cal};
+        function test(event, context) {
+          console.log('start request to ' + event.url)
+          http.get(event.url, function(res) {
+            console.log("Got response: " + res.statusCode);
+            context.succeed();
+          }).on('end', function(r){
+              console.log(r);
+          }).on('error', function(e) {
+            console.log("Got error: " + e.message);
+            context.done(null, 'FAILURE');
           });
-        })
-        .on('error', function(e) {
-          console.log("Got error: " + e.message);
-        });
+          console.log('end request to ' + event.url);
+        }
+        test(event, null);
+        console.log("done?!?!?!?!?!");
+        response.tellWithCard("we are out of luck!");
     },
     "GetRecipeWithIngredientCalories": function (intent, session, response) {
         var ingred = intent.slots.Ingred.value;
@@ -98,6 +107,7 @@ Pandvi.prototype.intentHandlers = {
         response.tellWithCard("nutrition values for are");
     },
     "UpdateUserDataCalories": function (intent, session, response) {
+        //http://pandvi.herokuapp.com/updateCalories?200
         response.tellWithCard("Hello World!", "Hello World", "Hello World!");
     },
     "UpdateUserDataFood": function (intent, session, response) {
