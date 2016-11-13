@@ -47,7 +47,7 @@ Pandvi.prototype.intentHandlers = {
     "GetRecipeWithIngredient": function (intent, session, response) {
 
       var ingred = 0
-
+      //session is object! pass session through for good things to happen
         response.tellWithCard(" Recipe is ");
     },
     "GetRecipeWithCalories": function (intent, session, response) {

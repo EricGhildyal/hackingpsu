@@ -10,14 +10,14 @@ var mongoose       = require('mongoose');
 var port           = 8080;
 
 //log requests
-app.use(morgan("combined"));
+// app.use(morgan("combined"));
 
 //parse requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //routes
-require('./app/routes')(app, passport);
+require('./app/routes')(app);
 
 //listen
 app.listen(port);
