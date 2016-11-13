@@ -7,7 +7,7 @@ var bodyParser     = require('body-parser');
 var morgan         = require('morgan');
 var path           = require ('path');
 var mongoose       = require('mongoose');
-var port           = 80;
+var port           = 8080;
 
 //log requests
 // app.use(morgan("combined"));
