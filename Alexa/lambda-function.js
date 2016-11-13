@@ -50,9 +50,9 @@ HelloWorld.prototype.eventHandlers.onSessionStarted = function (sessionStartedRe
 
 HelloWorld.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     console.log("HelloWorld onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
-    var speechOutput = "Welcome to the Alexa Skills Kit, you can say hello";
-    var repromptText = "You can say hello";
-    response.ask(speechOutput, repromptText);
+    //var speechOutput = "fuck you responder";
+    //var repromptText = "You can say hello";
+    //response.ask(speechOutput, repromptText);
 };
 
 HelloWorld.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {

@@ -1,25 +1,15 @@
 // app/models/message.js
 
 var mongoose       = require('mongoose');
-var bcrypt         = require('bcrypt-nodejs');
 var Schema         = mongoose.Schema;
 
-var dbconf         = require('../../config/authdb');
+var dbconf         = require('../../config/userdb');
 
 //connect to db
 var authdb = mongoose.createConnection(dbconf.url);
 
 var userSchema = new Schema({
-  email: String,
-  password: String,
-  username: String,
-  image: String,
-  friends:[
-    String
-  ],
-  frReqs:[
-    String
-  ]
+  cal: String
 });
 
 //hash

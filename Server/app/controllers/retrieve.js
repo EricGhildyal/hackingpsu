@@ -1,6 +1,6 @@
 // app/controllers/retrieve.js
 
-var Message = require('../models/message');
+var Message = require('../models/user');
 
 exports.output = function(callback){
   Message.find({}, function(err, items) {
