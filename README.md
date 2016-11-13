@@ -1,3 +1,3 @@
 # Pandvi
 
-An Alexa skill that takes a food item and gives you information about it.
+Pandvi works with Amazon Echo's technology to track dietary information easily. It can help to maintain a healthy lifestyle by recommending recipe suggestions, providing nutritional information, and tracking dietary data. 
