@@ -6,9 +6,10 @@ module.exports = function(app){
 
   app.get('/query', function(req, res){
     Spoon.question(req, function(data){
-      //TODO: add all the things
+      // console.log(data);
+      res.send(data);
     });
   });
 
-  
+
 }

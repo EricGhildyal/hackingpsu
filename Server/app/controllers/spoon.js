@@ -10,6 +10,7 @@ exports.question = function(req, callback){
   .header("X-Mashape-Key", "4OhDFJwzCVmshvw3a0ZUfe52n9bTp15t24FjsnnVQF0UvGemp0")
   .header("Accept", "application/json")
   .end(function (result) {
-    console.log(result.body);
+    // console.log(result.body.answer);
+    callback(result.body.answer);
   });
 };
