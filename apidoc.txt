@@ -1,0 +1,69 @@
+rec{
+  "ingred": ""
+}
+    returns:
+    rec{
+      "recipe": ""
+    }
+
+recCal{
+  "cal": ""
+}
+    returns:
+    reccal{
+      "recipe":""
+    }
+
+recCalIngred{
+  "ingred": ""
+  "cal":""
+}
+  returns:
+  recCalIngred{
+    "recipe":""
+  }
+
+question{
+  "query":""
+}
+    returns:
+    question{
+      "response": ""
+    }
+
+recIngred{
+  "ingreds": ["", ""]
+  "servings": 1
+}
+    returns:
+    recingred{
+      "recipe":""
+    }
+
+nutFacts{
+  "ingred":""
+}
+    returns:
+    nutFacts{
+      "info":""
+    }
+
+updateCal{
+  "usr": ""
+  "cal": ""
+}
+    returns:
+    nothing!
+
+updateIngred{
+  "usr":""
+  "ingred":""
+}
+    returns:
+    nothing!
+
+popRecip{
+  "recip":""
+}
+    returns:
+    nothing!
