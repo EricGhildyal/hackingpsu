@@ -11,7 +11,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="background-color:#b3f0ff;">
   <!--Navbar -->
   <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container-fluid">
@@ -39,25 +39,27 @@
     </div><!-- /.container-fluid -->
   </nav><!-- end navbar -->
 
-  <table>
-    <tr>
-      <th>User</th>
-      <th>Calories</th>
-    </tr>
 
-    <!-- reverse this to render messages in time order -->
-    <% var x = usrs.length; %>
-
-    <% while(x--) { %>
-      <tr>
-        <td><%= usrs[x].usr + ": "%></td>
-        <td><%= usrs[x].cal%></td>
+  <div class = "container jumbotron">
+    <h1 style = "padding-left: 40%",>
+      <font size= "40"> User Data </font>
+    </h1>
+    <table style = "padding-left: 40%", width = "400", style = "border:1px solid black;">
+      <tr style = "border:1px solid black;">
+        <th>User</th>
+       <th>Calories</th>
       </tr>
-    <% } %>
+         <!-- reverse this to render messages in time order -->
+     <% var x = usrs.length; %>
+
+     <% while(x--) { %>
+        <tr style = "border:1px solid black;">
+         <td><%= usrs[x].usr + ": "%></td>
+          <td><%= usrs[x].cal%></td>
+        </tr>
+     <% } %>
     </table>
-
-
-
+  </div>
 
 
 </body>
