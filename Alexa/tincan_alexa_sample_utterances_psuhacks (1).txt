@@ -1,3 +1,41 @@
 
+GetRecipeWithIngredient a recipe with ingredient
+GetRecipeWithIngredient make recipe ingredient
+GetRecipeWithIngredient a recipe that has
+GetRecipeWithIngredient some recipes ingredients
+GetRecipeWithIngredient make food recipe with
 
-CalCount how many calories are in {FoodItem}
+GetRecipeWithCalories make recipe under calories
+GetRecipeWithCalories make recipe calorie limit
+GetRecipeWithCalories recipe with calories
+GetRecipeWithCalories recipe with calorie count
+GetRecipeWithCalories meal under calories
+
+GetRecipeWithIngredientCalories make recipe with under calories
+GetRecipeWithIngredientCalories calorie meal with
+GetRecipeWithIngredientCalories make recipe with ingredients under
+GetRecipeWithIngredientCalories recipes under calories with
+GetRecipeWithIngredientCalories meal with ingredients under
+
+GetNutritionDetails how many calories in
+GetNutritionDetails calorie count
+GetNutritionDetails 
+
+UpdateUserDataCalories today I ate calories
+UpdateUserDataCalories I ate
+UpdateUserDataCalories 
+UpdateUserDataCalories 
+UpdateUserDataCalories
+
+UpdateUserDataFood today I ate
+UpdateUserDataFood I ate ingredients
+UpdateUserDataFood 
+UpdateUserDataFood
+UpdateUserDataFood
+
+PopulateToCart populate to my cart
+PopulateToCart add to my cart
+PopulateToCart add ingredients to my cart
+PopulateToCart
+PopulateToCart
+PopulateToCart
