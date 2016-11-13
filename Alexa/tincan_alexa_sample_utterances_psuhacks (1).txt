@@ -39,7 +39,7 @@ UpdateUserDataFood add meal {ingred}
 UpdateUserDataFood add food {ingred}
 
 PopulateToCart populate to my cart {ingred}
-PopulateToCart popular {ingred} to my cart
+PopulateToCart populate {ingred} to my cart
 PopulateToCart add {ingred} to my cart
 PopulateToCart add {ingred}
 PopulateToCart order {ingred}
