@@ -1,4 +1,5 @@
 //app/routes.js
+var retrieve = require('./controllers/retrieve.js');
 
 module.exports = function(app)
 {
@@ -11,16 +12,20 @@ module.exports = function(app)
     res.render(__dirname + '/views/about.ejs');
   });
 
-  app.get('/doctors', function(req, res){
-    res.render(__dirname + '/views/doctors.ejs');
-  });
-
-  app.get('/personal', function(req, res){
-    res.render(__dirname + '/views/personal.ejs');
+  app.get('/all', function(req, res){
+    retrieve.output(function(data){
+      res.render(__dirname + '/views/all.ejs', {
+        usrs: data,
+      });
+    });
   });
 
   app.get('/contact', function(req, res){
     res.render(__dirname + '/views/contact.ejs');
+  });
+
+  app.get('/personal', function(req, res){
+    res.render(__dirname + '/views/personal.ejs');
   });
 
 }

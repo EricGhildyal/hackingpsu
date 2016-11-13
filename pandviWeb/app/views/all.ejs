@@ -29,15 +29,32 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="navbar-1">
         <ul class="nav navbar-nav">
-          <li><a href="/styles.css">Home</a></li>
-          <li><a href="/styles.css">Doctor</a></li>
+          <li><a href="/personal">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/all">Doctor</a></li>
+          <li><a href="/contact">Contact Us</a></li>
         </ul>
 
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav><!-- end navbar -->
 
+  <table>
+    <tr>
+      <th>User</th>
+      <th>Calories</th>
+    </tr>
 
+    <!-- reverse this to render messages in time order -->
+    <% var x = usrs.length; %>
+
+    <% while(x--) { %>
+      <tr>
+        <td><%= usrs[x].usr + ": "%></td>
+        <td><%= usrs[x].cal%></td>
+      </tr>
+    <% } %>
+    </table>
 
 
 
