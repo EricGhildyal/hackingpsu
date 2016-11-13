@@ -1,41 +1,45 @@
 
-GetRecipeWithIngredient a recipe with ingredient
-GetRecipeWithIngredient make recipe ingredient
-GetRecipeWithIngredient a recipe that has
+GetRecipeWithIngredient a recipe with ingredient {ingred}
+GetRecipeWithIngredient make recipe ingredient {ingred}
+GetRecipeWithIngredient a recipe that has {ingred}
 GetRecipeWithIngredient some recipes ingredients
-GetRecipeWithIngredient make food recipe with
+GetRecipeWithIngredient some recipes with {ingred}
+GetRecipeWithIngredient make food recipe with {ingred}
+GetRecipeWithIngredient {ingred}
 
-GetRecipeWithCalories make recipe under calories
-GetRecipeWithCalories make recipe calorie limit
-GetRecipeWithCalories recipe with calories
-GetRecipeWithCalories recipe with calorie count
-GetRecipeWithCalories meal under calories
+GetRecipeWithCalories make recipe under {cal} calories
+GetRecipeWithCalories make recipe {cal} calorie limit
+GetRecipeWithCalories recipe with {cal} calories
+GetRecipeWithCalories recipe with calorie count {cal}
+GetRecipeWithCalories meal under {cal} calories
+GetRecipeWithCalories {cal} calorie meal
+GetRecipeWithCalories {cal} calorie recipe
 
-GetRecipeWithIngredientCalories make recipe with under calories
-GetRecipeWithIngredientCalories calorie meal with
-GetRecipeWithIngredientCalories make recipe with ingredients under
-GetRecipeWithIngredientCalories recipes under calories with
-GetRecipeWithIngredientCalories meal with ingredients under
+GetRecipeWithIngredientCalories make recipe with {ingred} under {cal} calories
+GetRecipeWithIngredientCalories {cal} calorie meal with {ingred}
+GetRecipeWithIngredientCalories make recipe with {ingred} under {cal} calories
+GetRecipeWithIngredientCalories recipes under {cal} calories with {ingred}
+GetRecipeWithIngredientCalories meal with {ingred} under {cal}
+GetRecipeWithIngredientCalories {cal} calorie recipe with {ingred}
 
-GetNutritionDetails how many calories in
-GetNutritionDetails calorie count
-GetNutritionDetails 
+GetNutritionDetails how many calories in {ingred}
+GetNutritionDetails calorie count in {ingred}
+GetNutritionDetails calories in {ingred}
 
-UpdateUserDataCalories today I ate calories
-UpdateUserDataCalories I ate
-UpdateUserDataCalories 
-UpdateUserDataCalories 
-UpdateUserDataCalories
+UpdateUserDataCalories today I ate {cal} calories
+UpdateUserDataCalories add {cal} calories 
+UpdateUserDataCalories update meal {cal} calories
+UpdateUserDataCalories track {cal} calories
 
-UpdateUserDataFood today I ate
-UpdateUserDataFood I ate ingredients
-UpdateUserDataFood 
-UpdateUserDataFood
-UpdateUserDataFood
+UpdateUserDataFood today I ate {ingred}
+UpdateUserDataFood I ate {ingred}
+UpdateUserDataFood update food {ingred}
+UpdateUserDataFood track food {ingred}
+UpdateUserDataFood add meal {ingred}
+UpdateUserDataFood add food {ingred}
 
-PopulateToCart populate to my cart
-PopulateToCart add to my cart
-PopulateToCart add ingredients to my cart
-PopulateToCart
-PopulateToCart
-PopulateToCart
+PopulateToCart populate to my cart {ingred}
+PopulateToCart popular {ingred} to my cart
+PopulateToCart add {ingred} to my cart
+PopulateToCart add {ingred}
+PopulateToCart order {ingred}

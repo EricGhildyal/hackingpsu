@@ -6,7 +6,7 @@
       },
       {
         "intent":"GetRecipeWithCalories",
-        "_comment": "(ingred)"
+        "_comment": "(cal)"
       },
       {
         "intent":"GetRecipeWithIngredientCalories",
