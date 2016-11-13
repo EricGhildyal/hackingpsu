@@ -1,13 +1,28 @@
 {
     "intents": [
-        {
-            "name": "CalCount",
-            "slots": [
-                {
-                    "name": "FoodItem",
-                    "type": "Amazon.CUSTOM"
-                }
-            ]
-        }
-    ]
+      {
+        "intent":"GetRecipeWithIngredient",
+      },
+      {
+        "intent":"GetRecipeWithCalories",
+      },
+      {
+        "intent":"GetRecipeWithIngredientCalories",
+      },
+      {
+        "intent":"QuestionQuery",
+      },
+      {
+        "intent":"GetNutritionDetails",
+      },
+      {
+        "intent":"UpdateUserDataCalories",
+      },
+      {
+        "intent":"UpdateUserDataFood",
+      },
+      {
+        "intent":"PopulateToCart",
+      }
+  ]
 }

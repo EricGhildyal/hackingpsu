@@ -4,15 +4,22 @@ rec{
     returns:
     rec{
       "recipe": ""
-    }
-
+}
+recIngred{
+  "ingreds": ["", ""]
+  "servings": 1
+}
+    returns:
+    recingred{
+      "recipe":""
+}
 recCal{
   "cal": ""
 }
     returns:
     reccal{
       "recipe":""
-    }
+}
 
 recCalIngred{
   "ingred": ""
@@ -29,15 +36,6 @@ question{
     returns:
     question{
       "response": ""
-    }
-
-recIngred{
-  "ingreds": ["", ""]
-  "servings": 1
-}
-    returns:
-    recingred{
-      "recipe":""
     }
 
 nutFacts{
@@ -62,7 +60,7 @@ updateIngred{
     returns:
     nothing!
 
-popRecip{
+popCart{
   "recip":""
 }
     returns:
