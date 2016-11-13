@@ -14,4 +14,10 @@ module.exports = function(app){
   });
 
 
+
+  //OAuthentication
+  app.get('/oauth_redirect', function(req, res){
+    //Console.log('hi');
+  });
+
 }
